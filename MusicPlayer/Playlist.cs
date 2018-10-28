@@ -10,8 +10,7 @@ namespace MusicPlayer
     {
         //something new...
 
-
-        public bool nothing;
+        private bool nothing;
 
         private List<MediaFile> playlist;
 
