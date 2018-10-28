@@ -10,7 +10,12 @@ namespace MusicPlayer
     {
         private List<MediaFile> playlist;
 
-        public bool PickRandomFile { get; set; }
-        public bool 
+        public bool Random { get; set; }
+        public bool Repeat { get; set; }
+
+        public MediaFile GetNextFile()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
