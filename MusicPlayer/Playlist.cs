@@ -10,6 +10,8 @@ namespace MusicPlayer
     {
         //something new...
 
+        private bool nothing;
+
         private List<MediaFile> playlist;
 
         public bool Random { get; set; }
