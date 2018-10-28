@@ -17,7 +17,7 @@ namespace MusicPlayer
             InitializeComponent();
         }
 
-        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             
@@ -26,9 +26,13 @@ namespace MusicPlayer
             mediaPlayer.URL = fileDialog.FileName;
         }
 
-        private void loadplaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        private void playlistPanelButton_Click(object sender, EventArgs e)
         {
-
+            playlistPanelButton.Checked = !playlistPanelButton.Checked;
+            if (playlistPanelButton.Checked)
+                splitContainer.Panel1Collapsed = false;
+            else
+                splitContainer.Panel1Collapsed = true;
         }
     }
 }

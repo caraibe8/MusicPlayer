@@ -14,8 +14,17 @@ namespace MusicPlayer
     interface IPlaylist
     {
         //Properties
+        /// <summary>
+        /// The file that is currently being read.
+        /// </summary>
         IMediaFile CurrentFile { get; }
+        /// <summary>
+        /// If the Playlist should always read the same file.
+        /// </summary>
         bool Random { get; set; }
+        /// <summary>
+        /// The way the files are picked depends on this property.
+        /// </summary>
         ReadMode ReadMode { get; set; }
 
         /// <summary>
