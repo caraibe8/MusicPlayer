@@ -8,10 +8,6 @@ namespace MusicPlayer
 {
     class PlaylistManager
     {
-        //something new...
-
-        private bool nothing;
-
         private List<MediaFile> playlist;
 
         public bool Random { get; set; }
