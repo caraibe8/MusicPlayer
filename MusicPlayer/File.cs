@@ -9,6 +9,11 @@ namespace MusicPlayer
 {
     class MediaFile
     {
+        /// <summary>
+        /// Returns the name of the file at the given path.
+        /// </summary>
+        /// <param name="path">Path of the file to look for</param>
+        /// <returns></returns>
         public static string GetFileName(string path)
         {
             path = path.Substring(path.LastIndexOf('/') + 1);
@@ -17,7 +22,7 @@ namespace MusicPlayer
 
         public string Path { get; }
         public string Name { get; }
-        
+
         public MediaFile(string path)
         {
             if (!File.Exists(path))
