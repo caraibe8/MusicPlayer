@@ -6,18 +6,49 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer
 {
-    class PlaylistManager
+    class PlaylistManager : IPlaylist
     {
-        //something new...
+        public IMediaFile CurrentFile => throw new NotImplementedException();
 
-        private bool nothing;
+        public bool Random { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ReadMode ReadMode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        private List<MediaFile> playlist;
+        public void AddToPlaylist(IMediaFile file)
+        {
+            throw new NotImplementedException();
+        }
 
-        public bool Random { get; set; }
-        public bool Repeat { get; set; }
+        public void AddToPlaylist(IEnumerable<IMediaFile> files)
+        {
+            throw new NotImplementedException();
+        }
 
-        public MediaFile GetNextFile()
+        public IMediaFile GetNextFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IMediaFile> GetPlaylist()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IMediaFile JumpToNextFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IMediaFile JumpToPreviousFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RemoveFromPlaylist(IMediaFile file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ResetPlaylist(IEnumerable<IMediaFile> files = null)
         {
             throw new NotImplementedException();
         }

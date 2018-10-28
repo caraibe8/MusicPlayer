@@ -33,6 +33,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadplaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadFileToolStripMenuItem});
+            this.loadFileToolStripMenuItem,
+            this.loadplaylistToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -69,8 +71,15 @@
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
             this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadFileToolStripMenuItem.Text = "&Load file";
+            this.loadFileToolStripMenuItem.Text = "Load &file";
             this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
+            // 
+            // loadplaylistToolStripMenuItem
+            // 
+            this.loadplaylistToolStripMenuItem.Name = "loadplaylistToolStripMenuItem";
+            this.loadplaylistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadplaylistToolStripMenuItem.Text = "Load &playlist";
+            this.loadplaylistToolStripMenuItem.Click += new System.EventHandler(this.loadplaylistToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -96,6 +105,7 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadplaylistToolStripMenuItem;
     }
 }
 

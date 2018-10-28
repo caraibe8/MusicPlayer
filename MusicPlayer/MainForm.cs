@@ -25,5 +25,10 @@ namespace MusicPlayer
 
             mediaPlayer.URL = fileDialog.FileName;
         }
+
+        private void loadplaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
