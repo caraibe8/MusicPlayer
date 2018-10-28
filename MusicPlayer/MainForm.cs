@@ -16,5 +16,14 @@ namespace MusicPlayer
         {
             InitializeComponent();
         }
+
+        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            
+            fileDialog.ShowDialog();
+
+            mediaPlayer.URL = fileDialog.FileName;
+        }
     }
 }
