@@ -8,10 +8,18 @@ namespace MusicPlayer
 {
     class PlaylistManager : IPlaylist
     {
-        public IMediaFile CurrentFile => throw new NotImplementedException();
+        private List<IMediaFile> playlist;
+        public IMediaFile CurrentFile { get; private set; }
+        public bool Random { get; set; }
+        public ReadMode ReadMode { get; set; }
 
-        public bool Random { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ReadMode ReadMode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public PlaylistManager()
+        {
+            CurrentFile = null;
+            Random = false;
+            ReadMode = ReadMode.Normal;
+            playlist = new List<IMediaFile>();
+        }
 
         public void AddToPlaylist(IMediaFile file)
         {

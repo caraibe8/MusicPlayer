@@ -8,8 +8,14 @@ namespace MusicPlayer
 {
     class MediaFile : IMediaFile
     {
-        public string Path => throw new NotImplementedException();
+        public string Path { get; }
 
-        public string Name => throw new NotImplementedException();
+        public string Name { get; }
+
+        public MediaFile(string path)
+        {
+            Path = path;
+            Name = path.Substring(path.LastIndexOf('/') + 1);
+        }
     }
 }

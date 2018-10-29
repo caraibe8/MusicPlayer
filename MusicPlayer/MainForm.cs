@@ -12,18 +12,21 @@ namespace MusicPlayer
 {
     public partial class MainForm : Form
     {
+        private PlaylistManager playList;
+
         public MainForm()
         {
             InitializeComponent();
+            playList = new PlaylistManager();
         }
 
         private void loadFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            
+
             fileDialog.ShowDialog();
 
-            mediaPlayer.URL = fileDialog.FileName;
+            playList.AddToPlaylist(new MediaFile(fileDialog.FileName));
         }
 
         private void playlistPanelButton_Click(object sender, EventArgs e)
@@ -33,6 +36,16 @@ namespace MusicPlayer
                 splitContainer.Panel1Collapsed = false;
             else
                 splitContainer.Panel1Collapsed = true;
+        }
+
+        private void btnLoop_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -34,12 +34,16 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFileButton = new System.Windows.Forms.ToolStripMenuItem();
             this.loadplaylistButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistPanelButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnRandom = new System.Windows.Forms.Button();
+            this.btnLoop = new System.Windows.Forms.Button();
+            this.listBoxPlaylist = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +55,7 @@
             this.mediaPlayer.Location = new System.Drawing.Point(0, 0);
             this.mediaPlayer.Name = "mediaPlayer";
             this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
-            this.mediaPlayer.Size = new System.Drawing.Size(530, 426);
+            this.mediaPlayer.Size = new System.Drawing.Size(933, 532);
             this.mediaPlayer.TabIndex = 0;
             // 
             // menuStrip
@@ -61,7 +65,7 @@
             this.viewToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1188, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -87,19 +91,6 @@
             this.loadplaylistButton.Size = new System.Drawing.Size(180, 22);
             this.loadplaylistButton.Text = "Load &playlist";
             // 
-            // splitContainer
-            // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer.Name = "splitContainer";
-            // 
-            // splitContainer.Panel2
-            // 
-            this.splitContainer.Panel2.Controls.Add(this.mediaPlayer);
-            this.splitContainer.Size = new System.Drawing.Size(800, 426);
-            this.splitContainer.SplitterDistance = 266;
-            this.splitContainer.TabIndex = 2;
-            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -117,11 +108,61 @@
             this.playlistPanelButton.Text = "&Playlist";
             this.playlistPanelButton.Click += new System.EventHandler(this.playlistPanelButton_Click);
             // 
+            // splitContainer
+            // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.listBoxPlaylist);
+            this.splitContainer.Panel1.Controls.Add(this.btnLoop);
+            this.splitContainer.Panel1.Controls.Add(this.btnRandom);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.mediaPlayer);
+            this.splitContainer.Size = new System.Drawing.Size(1188, 532);
+            this.splitContainer.SplitterDistance = 251;
+            this.splitContainer.TabIndex = 2;
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRandom.Location = new System.Drawing.Point(218, 506);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(30, 23);
+            this.btnRandom.TabIndex = 0;
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            // 
+            // btnLoop
+            // 
+            this.btnLoop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoop.Location = new System.Drawing.Point(182, 506);
+            this.btnLoop.Name = "btnLoop";
+            this.btnLoop.Size = new System.Drawing.Size(30, 23);
+            this.btnLoop.TabIndex = 1;
+            this.btnLoop.UseVisualStyleBackColor = true;
+            this.btnLoop.Click += new System.EventHandler(this.btnLoop_Click);
+            // 
+            // listBoxPlaylist
+            // 
+            this.listBoxPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxPlaylist.FormattingEnabled = true;
+            this.listBoxPlaylist.Location = new System.Drawing.Point(3, 0);
+            this.listBoxPlaylist.Name = "listBoxPlaylist";
+            this.listBoxPlaylist.Size = new System.Drawing.Size(246, 498);
+            this.listBoxPlaylist.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1188, 556);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -130,6 +171,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
@@ -148,6 +190,9 @@
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playlistPanelButton;
+        private System.Windows.Forms.Button btnLoop;
+        private System.Windows.Forms.Button btnRandom;
+        private System.Windows.Forms.ListBox listBoxPlaylist;
     }
 }
 
