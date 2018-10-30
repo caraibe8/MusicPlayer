@@ -52,7 +52,7 @@ namespace MusicPlayer
         /// Adds the given file to the playlist if it is valid.
         /// </summary>
         /// <param name="file">File to add</param>
-        /// <returns>If the file was successfully added</returns>
+        /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         void AddToPlaylist(IMediaFile file);
         /// <summary>

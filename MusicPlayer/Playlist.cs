@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using static System.IO.File;
 
 namespace MusicPlayer
 {
@@ -23,12 +25,26 @@ namespace MusicPlayer
 
         public void AddToPlaylist(IMediaFile file)
         {
-            throw new NotImplementedException();
+            if (file == null)
+                throw new NullReferenceException();
+
+            if (!Exists(file.Path))
+                throw new ArgumentException();
+            playlist.Add(file);
         }
 
         public void AddToPlaylist(IEnumerable<IMediaFile> files)
         {
-            throw new NotImplementedException();
+            if (files == null)
+                throw new NullReferenceException();
+
+            foreach (IMediaFile file in files)
+            {
+                if (!Exists(file.Path))
+                    throw new ArgumentException();
+ 
+            }
+            playlist.AddRange(files);
         }
 
         public IMediaFile GetNextFile()
