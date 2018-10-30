@@ -16,10 +16,17 @@ namespace MusicPlayer
         [STAThread]
         static void Main()
         {
-            //LanguagePicker.SetCultureInfo(CultureInfo.InstalledUICulture);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+            }
+            catch (Exception ex)
+            {
+                if (!CrashReportHandler.CreateCrashReport(ex))
+                    throw ex;
+            }
         }
     }
 }

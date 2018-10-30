@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer", "MusicPlayer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayerLib", "MusicPlayerLib\MusicPlayerLib.csproj", "{94B1277E-E15C-4A32-9431-52FF8D9A7CBD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librairies", "Librairies", "{6333E0E9-2C47-4DDD-8538-8E812F35122D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,17 @@ Global
 		{94B1277E-E15C-4A32-9431-52FF8D9A7CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94B1277E-E15C-4A32-9431-52FF8D9A7CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B1277E-E15C-4A32-9431-52FF8D9A7CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94B1277E-E15C-4A32-9431-52FF8D9A7CBD} = {6333E0E9-2C47-4DDD-8538-8E812F35122D}
+		{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE} = {6333E0E9-2C47-4DDD-8538-8E812F35122D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D534A16-AD46-4177-82BC-69A4CD581BA4}

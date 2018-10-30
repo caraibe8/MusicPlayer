@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94B1277E-E15C-4A32-9431-52FF8D9A7CBD}</ProjectGuid>
+    <ProjectGuid>{3F37C3DC-FFDE-4057-9C0D-35AC0EA512FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MusicPlayerLib</RootNamespace>
-    <AssemblyName>MusicPlayerLib</AssemblyName>
+    <RootNamespace>Utility</RootNamespace>
+    <AssemblyName>Utility</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrashReportHandler.cs" />
-    <Compile Include="IMediaFile.cs" />
-    <Compile Include="IPlaylist.cs" />
-    <Compile Include="TextManager.cs" />
-    <Compile Include="MediaFile.cs" />
-    <Compile Include="Playlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utility\Utility.csproj">
-      <Project>{3f37c3dc-ffde-4057-9c0d-35ac0ea512fe}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
+    <Compile Include="UtilAng.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

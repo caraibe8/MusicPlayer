@@ -106,7 +106,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="bin\Debug\Languages\English.xml" />
+    <Content Include="bin\Debug\Display\Text\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

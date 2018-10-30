@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MusicPlayerLib;
-using static MusicPlayerLib.LanguagePicker;
+using static MusicPlayerLib.TextManager;
+using static MusicPlayerLib.TextManager.StringKey;
 
 namespace MusicPlayer
 {
@@ -20,7 +21,15 @@ namespace MusicPlayer
         public MainForm()
         {
             InitializeComponent();
+
+            InitializeTexts();
             playList = new PlaylistManager();
+        }
+
+        private void InitializeTexts()
+        {
+            loadFileButton.Text = GetString(LoadFileBtnText);
+            loadplaylistButton.Text = GetString(LoadPlaylistBtnText);
         }
 
         private void loadFileButton_Click(object sender, EventArgs e)
@@ -35,12 +44,14 @@ namespace MusicPlayer
                 }
                 catch (FileNotFoundException)
                 {
-                    MessageBox.Show(GetString(KeyFileNotFoundMsg), GetString(KeyFileNotFoundTitle), MessageBoxButtons.OK);
+                    MessageBox.Show(GetString(FileNotFoundMsg), GetString(FileNotFoundTitle), MessageBoxButtons.OK);
                 }
                 catch (Exception)
                 {
 
                 }
+
+                ReadNextFile();
             }
         }
 
@@ -61,6 +72,11 @@ namespace MusicPlayer
         private void btnRandom_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void ReadNextFile()
+        {
+            mediaPlayer.URL = playList.GetNextFile().Path;
         }
     }
 }
