@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MusicPlayer
 {
@@ -14,6 +15,8 @@ namespace MusicPlayer
 
         public MediaFile(string path)
         {
+            if (!File.Exists(path))
+                throw new FileNotFoundException();
             Path = path;
             Name = path.Substring(path.LastIndexOf('/') + 1);
         }

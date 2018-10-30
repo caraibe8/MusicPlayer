@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MusicPlayer
 {
@@ -24,9 +25,17 @@ namespace MusicPlayer
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
 
-            fileDialog.ShowDialog();
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    playList.AddToPlaylist(new MediaFile(fileDialog.FileName));
+                }
+                catch (FileNotFoundException)
+                {
 
-            playList.AddToPlaylist(new MediaFile(fileDialog.FileName));
+                }
+            }
         }
 
         private void playlistPanelButton_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace MusicPlayer
                 throw new NullReferenceException();
 
             if (!Exists(file.Path))
-                throw new ArgumentException();
+                throw new FileNotFoundException();
             playlist.Add(file);
         }
 
@@ -41,7 +41,7 @@ namespace MusicPlayer
             foreach (IMediaFile file in files)
             {
                 if (!Exists(file.Path))
-                    throw new ArgumentException();
+                    throw new FileNotFoundException();
  
             }
             playlist.AddRange(files);
