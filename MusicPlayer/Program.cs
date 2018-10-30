@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using MusicPlayerLib;
 
 namespace MusicPlayer
 {
@@ -15,7 +16,7 @@ namespace MusicPlayer
         [STAThread]
         static void Main()
         {
-            LanguagePicker.cultureInfo = CultureInfo.InstalledUICulture;
+            //LanguagePicker.SetCultureInfo(CultureInfo.InstalledUICulture);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

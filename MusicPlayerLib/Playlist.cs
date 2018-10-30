@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.IO;
 using static System.IO.File;
 
-namespace MusicPlayer
+namespace MusicPlayerLib
 {
-    class PlaylistManager : IPlaylist
+    public class PlaylistManager : IPlaylist
     {
         private List<IMediaFile> playlist;
         public IMediaFile CurrentFile { get; private set; }

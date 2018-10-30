@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MusicPlayer
+namespace MusicPlayerLib
 {
-    interface IMediaFile
+    public interface IMediaFile
     {
         //Properties
         /// <summary>

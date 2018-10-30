@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace MusicPlayer
+namespace MusicPlayerLib
 {
-    class MediaFile : IMediaFile
+    public class MediaFile : IMediaFile
     {
         public string Path { get; }
 

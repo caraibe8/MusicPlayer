@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MusicPlayerLib;
+using static MusicPlayerLib.LanguagePicker;
 
 namespace MusicPlayer
 {
@@ -32,6 +34,10 @@ namespace MusicPlayer
                     playList.AddToPlaylist(new MediaFile(fileDialog.FileName));
                 }
                 catch (FileNotFoundException)
+                {
+                    MessageBox.Show(GetString(KeyFileNotFoundMsg), GetString(KeyFileNotFoundTitle), MessageBoxButtons.OK);
+                }
+                catch (Exception)
                 {
 
                 }

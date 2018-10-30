@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace MusicPlayer
+namespace MusicPlayerLib
 {
     public enum ReadMode
     {
         Loop, Repeat, Normal
     }
 
-    interface IPlaylist
+    public interface IPlaylist
     {
         //Properties
         /// <summary>
