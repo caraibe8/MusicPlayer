@@ -57,7 +57,10 @@ namespace MusicPlayerLib
 
         public enum StringKey
         {
-            KeyNotFound, FileNotFoundTitle, FileNotFoundMsg, LoadFileBtnText, LoadPlaylistBtnText
+            KeyNotFound,
+            FileNotFoundTitle, FileNotFoundMsg,
+            FolderNotFoundTitle, FolderNotFoundMsg,
+            LoadFileBtnText, LoadPlaylistBtnText, ShowPlaylistBtnText
         }
 
         //Message when key not found

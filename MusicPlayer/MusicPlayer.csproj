@@ -104,7 +104,6 @@
       <Name>MusicPlayerLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="bin\Debug\Display\Text\strings.xml" />
   </ItemGroup>

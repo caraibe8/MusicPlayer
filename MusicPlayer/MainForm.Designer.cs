@@ -37,9 +37,9 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistPanelButton = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.btnRandom = new System.Windows.Forms.Button();
-            this.btnLoop = new System.Windows.Forms.Button();
             this.listBoxPlaylist = new System.Windows.Forms.ListBox();
+            this.btnLoop = new System.Windows.Forms.Button();
+            this.btnRandom = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -57,6 +57,7 @@
             this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
             this.mediaPlayer.Size = new System.Drawing.Size(933, 532);
             this.mediaPlayer.TabIndex = 0;
+            this.mediaPlayer.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.mediaPlayer_ClickEvent);
             // 
             // menuStrip
             // 
@@ -81,7 +82,7 @@
             // loadFileButton
             // 
             this.loadFileButton.Name = "loadFileButton";
-            this.loadFileButton.Size = new System.Drawing.Size(180, 22);
+            this.loadFileButton.Size = new System.Drawing.Size(140, 22);
             this.loadFileButton.Text = "Load &file";
             this.loadFileButton.Click += new System.EventHandler(this.loadFileButton_Click);
             // 
@@ -90,6 +91,7 @@
             this.loadplaylistButton.Name = "loadplaylistButton";
             this.loadplaylistButton.Size = new System.Drawing.Size(180, 22);
             this.loadplaylistButton.Text = "Load &playlist";
+            this.loadplaylistButton.Click += new System.EventHandler(this.loadplaylistButton_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -104,7 +106,7 @@
             this.playlistPanelButton.Checked = true;
             this.playlistPanelButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.playlistPanelButton.Name = "playlistPanelButton";
-            this.playlistPanelButton.Size = new System.Drawing.Size(180, 22);
+            this.playlistPanelButton.Size = new System.Drawing.Size(111, 22);
             this.playlistPanelButton.Text = "&Playlist";
             this.playlistPanelButton.Click += new System.EventHandler(this.playlistPanelButton_Click);
             // 
@@ -127,15 +129,16 @@
             this.splitContainer.SplitterDistance = 251;
             this.splitContainer.TabIndex = 2;
             // 
-            // btnRandom
+            // listBoxPlaylist
             // 
-            this.btnRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRandom.Location = new System.Drawing.Point(218, 506);
-            this.btnRandom.Name = "btnRandom";
-            this.btnRandom.Size = new System.Drawing.Size(30, 23);
-            this.btnRandom.TabIndex = 0;
-            this.btnRandom.UseVisualStyleBackColor = true;
-            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            this.listBoxPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxPlaylist.FormattingEnabled = true;
+            this.listBoxPlaylist.Location = new System.Drawing.Point(3, 0);
+            this.listBoxPlaylist.Name = "listBoxPlaylist";
+            this.listBoxPlaylist.Size = new System.Drawing.Size(246, 498);
+            this.listBoxPlaylist.TabIndex = 2;
             // 
             // btnLoop
             // 
@@ -147,16 +150,15 @@
             this.btnLoop.UseVisualStyleBackColor = true;
             this.btnLoop.Click += new System.EventHandler(this.btnLoop_Click);
             // 
-            // listBoxPlaylist
+            // btnRandom
             // 
-            this.listBoxPlaylist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxPlaylist.FormattingEnabled = true;
-            this.listBoxPlaylist.Location = new System.Drawing.Point(3, 0);
-            this.listBoxPlaylist.Name = "listBoxPlaylist";
-            this.listBoxPlaylist.Size = new System.Drawing.Size(246, 498);
-            this.listBoxPlaylist.TabIndex = 2;
+            this.btnRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRandom.Location = new System.Drawing.Point(218, 506);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(30, 23);
+            this.btnRandom.TabIndex = 0;
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // MainForm
             // 

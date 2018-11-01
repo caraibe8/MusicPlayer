@@ -30,6 +30,7 @@ namespace MusicPlayer
         {
             loadFileButton.Text = GetString(LoadFileBtnText);
             loadplaylistButton.Text = GetString(LoadPlaylistBtnText);
+            playlistPanelButton.Text = GetString(ShowPlaylistBtnText);
         }
 
         private void loadFileButton_Click(object sender, EventArgs e)
@@ -77,6 +78,37 @@ namespace MusicPlayer
         private void ReadNextFile()
         {
             mediaPlayer.URL = playList.GetNextFile().Path;
+        }
+
+        private void mediaPlayer_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+          
+        }
+
+        private void loadplaylistButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (!Directory.Exists(folderDialog.SelectedPath))
+                {
+                    MessageBox.Show(GetString(FolderNotFoundMsg), GetString(FolderNotFoundTitle), MessageBoxButtons.OK);
+                    return;
+                }
+
+                foreach (string filePath in Directory.GetFiles(folderDialog.SelectedPath))
+                {
+                    try
+                    {
+                        playList.AddToPlaylist(new MediaFile(filePath));
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+                }
+                ReadNextFile();
+            }
         }
     }
 }
