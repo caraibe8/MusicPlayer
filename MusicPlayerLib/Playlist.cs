@@ -89,27 +89,56 @@ namespace MusicPlayerLib
 
         public IEnumerable<IMediaFile> GetPlaylist()
         {
-            throw new NotImplementedException();
+            return playlist;
         }
 
         public IMediaFile JumpToNextFile()
         {
-            throw new NotImplementedException();
+            if (ReadMode == ReadMode.Loop)
+            {
+                if (Random) return SetCurrentFile(GetRandomFile(true));
+                else if (playlist.IndexOf(CurrentFile) - 1 == playlist.Count) return SetCurrentFile(playlist[0]);
+                else return SetCurrentFile(playlist[playlist.IndexOf(CurrentFile) - 1]);
+            }
+            else
+            {
+                if (Random) return SetCurrentFile(GetRandomFile(false));
+                else if (playlist.IndexOf(CurrentFile) + 1 == playlist.Count) return SetCurrentFile(null);
+                else return SetCurrentFile(playlist[playlist.IndexOf(CurrentFile) + 1]);
+            }
         }
 
         public IMediaFile JumpToPreviousFile()
         {
-            throw new NotImplementedException();
+            if (ReadMode == ReadMode.Loop)
+            {
+                if (Random) return SetCurrentFile(GetRandomFile(true));
+                else if (playlist.IndexOf(CurrentFile) - 1 == playlist.Count) return SetCurrentFile(playlist[0]);
+                else return SetCurrentFile(playlist[playlist.IndexOf(CurrentFile) - 1]);
+            }
+            else
+            {
+                if (Random) return SetCurrentFile(GetRandomFile(false));
+                else if (playlist.IndexOf(CurrentFile) - 1 == playlist.Count) return SetCurrentFile(null);
+                else return SetCurrentFile(playlist[playlist.IndexOf(CurrentFile) - 1]);
+            }
         }
-
         public bool RemoveFromPlaylist(IMediaFile file)
         {
-            throw new NotImplementedException();
+            if (playlist.Contains(file))
+            {
+                playlist.Remove(file);
+                return true;
+            }
+                return false;
         }
 
         public void ResetPlaylist(IEnumerable<IMediaFile> files = null)
         {
-            throw new NotImplementedException();
+            if (files == null)
+                playlist = null;
+            else
+                playlist = new playlist<IMediaFile>(files);
         }
 
         private void FillNotReadFile()
